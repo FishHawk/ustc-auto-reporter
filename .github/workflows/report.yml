@@ -2,12 +2,12 @@
 
 name: Auto-report action
 
-on: 
+on:
   push:
     branches:
       - master
   schedule:
-    - cron: '15 4,11,23 * * *'
+    - cron: '46 0,8 * * *'
 
 jobs:
   build:
