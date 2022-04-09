@@ -106,5 +106,4 @@ if __name__ == '__main__':
                         help='your CAS password', required=True)
     args = parser.parse_args()
     for stuid, password in zip(args.stuid, args.password):
-        print(f'Report for {stuid}.')
         Report(stuid=stuid, password=password).run()
