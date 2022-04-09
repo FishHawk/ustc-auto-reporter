@@ -99,8 +99,12 @@ class Report(object):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='URC nCov auto report script.')
-    parser.add_argument('stuid', help='your student number', type=str)
-    parser.add_argument('password', help='your CAS password', type=str)
+        description='USTC auto report script.')
+    parser.add_argument('--stuid', nargs='+',
+                        help='your student number', required=True)
+    parser.add_argument('--password', nargs='+',
+                        help='your CAS password', required=True)
     args = parser.parse_args()
-    Report(stuid=args.stuid, password=args.password).run()
+    for stuid, password in zip(args.stuid, args.password):
+        print(f'Report for {stuid}.')
+        Report(stuid=stuid, password=password).run()
