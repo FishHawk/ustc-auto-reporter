@@ -29,4 +29,4 @@ jobs:
         STUID: ${{ secrets.Stuid }}
         PASSWORD: ${{ secrets.Password }}
       run: |
-        python report.py "$STUID" "$PASSWORD"
+        python report.py --stuid "$STUID" --password "$PASSWORD"
