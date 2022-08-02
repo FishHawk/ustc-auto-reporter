@@ -1,2 +1,4 @@
 beautifulsoup4==4.11.1
+pyjson5==1.6.1
+pytz==2021.3
 requests==2.27.1

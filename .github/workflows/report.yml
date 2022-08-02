@@ -7,7 +7,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '46 0,8 * * *'
+    - cron: '46 0,20 * * *'
 
 jobs:
   build:
@@ -29,6 +29,4 @@ jobs:
         STUID: ${{ secrets.Stuid }}
         PASSWORD: ${{ secrets.Password }}
       run: |
-        stuid=( $STUID )
-        password=( $PASSWORD )
-        python report.py --stuid "${stuid[@]}" --password "${password[@]}"
+        python report.py --stuid "${stuid}" --password "${password} --mrbb --jkxxsc --sqbb"
